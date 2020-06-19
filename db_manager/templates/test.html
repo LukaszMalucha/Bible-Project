@@ -1,0 +1,574 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+
+{% load bootstrap_tags %}
+
+
+{% block content %}
+<div id="page-index">
+  <div class="dashboard-cards">
+    <div class="row row-cards">
+      <div class="row plain-element">
+        <div class="col s8 m8 plain-element">
+          <div class="card insights-card">
+            <div class="row card-header">
+              <div class="col s4 m10 plain-element"><h6>Metadata Error Report</h6>
+                <p>Issues & Errors - 1/2020 </p></div>
+              <div class="col s8 m2 plain-element right-align">
+                <button type="submit" class="btn btn-report">
+                  <i class="fas fa-file-csv"></i>&nbsp; Download Report
+                </button>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> General</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Metadata Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic File Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Empty Link</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-pen-square"></i> Title</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+
+                    <tr>
+                      <td>Longer than 255 characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Shorter than 3 characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-edit"></i> meta_title</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+
+                    <tr>
+                      <td>Longer than 255 characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Shorter than 3 characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Business</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+
+
+                    <tr>
+                      <td>Longer than 255 characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-calendar-alt"></i> created_at</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Incorrect Date Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Date:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-calendar-alt"></i> meta_created_date</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Incorrect Date Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Date:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-calendar-alt"></i> meta_lastEdition</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Incorrect Date Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Date:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-calendar-alt"></i> meta_lastPublication</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Incorrect Date Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Date:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-calendar-alt"></i> meta_revised_modified</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Incorrect Date Format:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Date:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Product Brand</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Brand:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_brand</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                   <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Brand:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Document Type</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                   <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Type:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_doctype_prod</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Type:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_doctype</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Ambigious Type:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Document Number</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_docnumber</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Document Revision</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_docrev</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                   <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_prodname</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Version</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_version</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Category</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="fas fa-file-alt"></i> Product code</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="col s3 m3">
+                <div class="row table-header">
+                  <h6><i class="far fa-file-alt"></i> meta_category</h6>
+                </div>
+                <div class="chart">
+                  <table class="table-summary">
+                    <tr>
+                      <td>Longer than 255 characters</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Erratic Characters:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                    <tr>
+                      <td>Field Missing:</td>
+                      <td><b>0</b></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
