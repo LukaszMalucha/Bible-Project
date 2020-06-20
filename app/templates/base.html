@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bible Verses</title>
+  <meta name="Description"
+        content="Bible Verses">
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- FontAwesome Styles-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <!-- Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap" rel="stylesheet">
+  <!-- Material Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Custom Styles-->
+  <link href="{% static 'css/custom-styles.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/navbar.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/data.css' %}" rel="stylesheet"/>
+
+
+
+
+  {% block extrahead %}{% endblock %} {% block head_js %} {% endblock head_js %}
+
+</head>
+
+<body>
+<div id="wrapper">
+  <!-- TOP NAVBAR -->
+  {% block navbar %}
+  <nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        Bible Verses
+      </a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+        {% if user.is_authenticated %}
+        <li><span><a class="nav-link" href="{% url 'db_manager:db-manager' %}"><i class="fas fa-database"></i> DB Manager</a></span></li>
+        <li><span><a class="nav-link" href="{% url 'user:logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></span></li>
+        {% else %}
+        <li><span><a class="nav-link" href="{% url 'user:login' %}"><i class="fas fa-user"></i>Login</a></span></li>
+        {% endif %}
+    </ul>
+  </nav>
+  {% endblock %}
+  <!-- PAGE-INDEX-->
+
+
+  {% block content %}
+
+  {% endblock %}
+</div>
+<!-- /. WRAPPER  -->
+<div class="footer">
+  <p><a target="_blank"
+        href="https://www.freeprivacypolicy.com/privacy/view/9b972ff9a2aaeda03f07216c15625791/">Privacy
+    Policy</a> • © 2020 www.septellar.com - All Rights Reserved • Powered by Septellar &trade;
+  </p>
+</div>
+<!-- Materialize Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- custom JS -->
+<script src="{% static 'js/custom-scripts.js' %}"></script>
+
+{% block js %}
+{% endblock %}
+</body>
+
+</html>

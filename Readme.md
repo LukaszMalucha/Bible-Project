@@ -1,3 +1,2 @@
-## Bible keyword search
+## Bible Keyword Search Project
 
-1. HTML to csv parser
