@@ -26,5 +26,6 @@ urlpatterns = [
     path("user/", include("allauth.urls")),
     path("api/user/", include("user.api.urls")),
     path("db/", include("db_manager.urls")),
+    path("api/", include("search.urls")),
     re_path(r"^.*$", IndexTemplateView.as_view(), name="entry-point"),
 ]
