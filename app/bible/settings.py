@@ -203,8 +203,13 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = "core.User"
 
 
-# Allow Cors Origin
-CORS_ORIGIN_ALLOW_ALL = True
+# Allow CORS Origin
+CORS_ORIGIN_WHITELIST = [
+    "https://www.biblekeywords.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    "http://localhost:63342",
+]
 
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
