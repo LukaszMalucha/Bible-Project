@@ -205,7 +205,7 @@ AUTH_USER_MODEL = "core.User"
 
 # Allow CORS Origin
 CORS_ORIGIN_WHITELIST = [
-    "https://www.biblekeywords.com",
+    "https://www.gnnai.com",
     "http://localhost:8080",
     "http://127.0.0.1:9000",
     "http://localhost:63342",
