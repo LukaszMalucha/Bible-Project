@@ -14,6 +14,6 @@ django-webpack-loader==0.6.0
 gunicorn==19.9.0
 pandas
 DjangoRestFramework==3.9.1
-numpy==1.18.1
+numpy==1.22.0
 Pillow==7.0.0
 psycopg2-binary==2.8.4
