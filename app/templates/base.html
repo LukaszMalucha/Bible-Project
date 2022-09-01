@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bible Verses</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <!-- FontAwesome Styles-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <!-- Custom Styles-->
+  <link href="{% static 'css/custom-styles.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/navbar.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/data.css' %}" rel="stylesheet"/>
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Styles-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/cb5db23bd5.js"></script>
+
+  <!-- Material Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  {% block extrahead %}{% endblock %} {% block head_js %} {% endblock head_js %}
+
+
+</head>
+
+<body>
+<div id="wrapper">
+  <!-- TOP NAVBAR -->
+  {% block navbar %}
+  <nav class="row navbar navbar-default top-navbar" role="navigation">
+    <div class="col col-xs-12 col-sm-2 col-md-2 col-lg-4 plain-element col-logo text-center">
+      <div class="navbar-header">
+
+        <a class="navbar-brand" href="/">
+          <i class="fa-solid fa-compass"></i> Bible Verses
+        </a>
+      </div>
+    </div>
+    <div class="col col-xs-8 col-sm-8 col-md-5 col-lg-4 plain-element text-center">
+      <div class="row plain-element">
+
+
+
+      </div>
+    </div>
+    <div class="col col-xs-4 col-sm-4 col-md-5 col-lg-4 col-logo plain-element">
+      <ul class="nav navbar-top-links navbar-right">
+        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        <li>
+          <button class="nav-button" onclick="window.location.href='/db/db-manager'">
+            DB Manager
+          </button>
+        </li>
+        <li>
+          <button class="nav-button" onclick="window.location.href='/db/full-download-items'">
+            Download
+          </button>
+        </li>
+        {% endif %}
+        <li>
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <span><button class="nav-button btn-logout">Logout {{ user }}</button></span>
+          </form>
+        </li>
+        {% else %}
+        <li><span><a class="nav-link" href="{% url 'account_login' %}"> Login Admin</a></span></li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </nav>
+
+
+  {% endblock %}
+  <!-- PAGE-INDEX-->
+  <div id="page-index">
+
+    {% block content %}
+
+
+    {% endblock %}
+  </div>
+
+</div>
+<!-- /. WRAPPER  -->
+<div class="footer">
+  <p><a target="_blank"
+        href="https://www.freeprivacypolicy.com/privacy/view/9b972ff9a2aaeda03f07216c15625791/">Privacy
+    Policy</a> • © 2022 All Rights Reserved • Powered by Septellar &trade;</p>
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<!-- custom JS -->
+<script src="{% static 'js/custom-scripts.js' %}"></script>
+{% block js %}
+{% endblock %}
+
+</body>
+
+</html>

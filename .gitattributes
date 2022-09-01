@@ -1,0 +1,5 @@
+app/static/* linguist-vendored
+app/user/templates/* linguist-vendored
+app/projects/templates/* linguist-vendored
+app/charity/templates/* linguist-vendored
+app/charity_donation/templates/* linguist-vendored

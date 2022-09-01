@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% load static %}
+{% block extrahead %}
+<link href="{% static 'css/forms.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% load account socialaccount %}
+{% block content %}
+<div class="row row-message">
+  {% if form.errors %}
+
+  {% for element in form.errors.values %}
+  <div class="alert alert-danger">
+    <div class="messages text-center">
+      {{ element }}
+    </div>
+  </div>
+  {% endfor %}
+
+  {% endif %}
+</div>
+<div class="form-container">
+
+  <form class="form-user" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    <fieldset class="form-box">
+      <div class="row plain-element center-align">
+        <h3 class="underline-green">Login</h3>
+      </div>
+      <div class="row text-center row-form">
+        <div class="row plain-element">
+          <div class="input-field  col col-12 col-sm-12">
+            <input type="text" name="login" id="id_email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="row plain-element">
+          <div class="input-field  col col-12 col-sm-12">
+            <input type="password" name="password" id="id_password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="row plain-element">
+          <div class="input-field  col col-12 col-sm-12">
+            <div class="">
+              <label>
+                <input type="checkbox" name="remember" id="id_remember">
+                <span class="label-checkbox">Remember Me</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn-login"><span>Login</span>
+      </button>
+
+    </fieldset>
+  </form>
+
+</div>
+<!-- /container -->
+
+{% endblock %}

@@ -1,0 +1,6 @@
+venv/
+venv2/
+.idea/
+env.py
+env_linkedin.py
+core/migrations/*

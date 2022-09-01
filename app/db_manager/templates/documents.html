@@ -1,0 +1,147 @@
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="dashboard">
+  <div class="row row-cards">
+    <div class="row text-start row-back">
+      <a href="{% url 'db_manager:db-manager' %}">
+        <i class="fas fa-chevron-left"></i> Back To DB Upload
+      </a>
+    </div>
+    <div class="card card-description">
+      <div class="row plain-element">
+        <div class=" col col-12 col-sm-12 col-md-4 col-lg-3 plain-element">
+          <div class="row plain-element text-start">
+            <div class="input-field col col-sm-9 col-form">
+              <h4> Upload Verses </h4>
+            </div>
+          </div>
+           <form action="{% url 'db_manager:documents-upload' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            <div class="row plain-element text-start">
+              <input class="form-control file-input" type="file" name="csv_file" id="csv_file" accept=".csv" required="True">
+            </div>
+
+            <div class="row plain-element text-start">
+              <div class="input-field col col-sm-9 col-form">
+                <button type="submit" class="btn btn-submit">
+                  <i class="fas fa-file-csv"></i>&nbsp; Upload CSV File
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row plain-element">
+            <div class="input-field col col-sm-9 col-form">
+              {% if critical_error %}
+              <h6 class="error">{{ critical_error }}</h6>
+              {% endif %}
+              {% if upload_report %}
+              <div class="row plain-element text-start">
+                <br>
+                <h4> Dataset Report:</h4>
+
+                <p class="">New: {{ upload_report.new }}</p>
+                <p class="">Updates: {{ upload_report.updates }}</p>
+                <p class="">Errors: {{ upload_report.errors }}</p>
+                <p>Upload Errors:</p>
+                {% for element in upload_report.upload_errors %}
+                <ol><p class="error">{{element}}</p></ol>
+                {% endfor %}
+              </div>
+              {% endif %}
+              {% if dataset_errors %}
+              <div class="row plain-element text-start">
+                <h4> Dataset Issues:</h4>
+              </div>
+              {% for error in dataset_errors %}
+              <div class="row plain-element text-start">
+                <h6 class="error">{{ error }}</h6>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class=" col col-12 col-sm-12 col-md-6 col-lg-9 plain-element">
+          {% if meta_1 %}
+          <div class="row plain-element text-start">
+            <div class="input-field col col-sm-10 col-form">
+              <h4> {{ filename }} Summary:</h4>
+            </div>
+          </div>
+          <div class="row plain-element">
+          <div class=" col col-12 col-sm-12 col-md-12 col-lg-4 plain-element">
+            {% for element in meta_1 %}
+            <div class="row plain-element text-start">
+              <h6>{{element.name}}</h6>
+            </div>
+            <div class="row plain-element text-start">
+              <table class="table-overview">
+                {% for key, value in element.items %}
+                {% if key != "name" %}
+                <tr>
+                  <td class="td-category">{{ key }}</td>
+                  <td>{{ value | truncatechars:100 }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+              </table>
+            </div>
+            {% endfor %}
+          </div>
+          <div class=" col col-12 col-sm-12 col-md-12 col-lg-4 plain-element">
+            {% for element in meta_2 %}
+            <div class="row plain-element text-start">
+              <h6>{{element.name}}</h6>
+            </div>
+            <div class="row plain-element text-start">
+              <table class="table-overview">
+                {% for key, value in element.items %}
+                {% if key != "name" %}
+                <tr>
+                  <td class="td-category">{{ key }}</td>
+                  <td>{{ value | truncatechars:100 }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+              </table>
+            </div>
+            {% endfor %}
+          </div>
+          <div class=" col col-12 col-sm-12 col-md-12 col-lg-4 plain-element">
+            {% for element in meta_3 %}
+            <div class="row plain-element text-start">
+              <h6>{{element.name}}</h6>
+            </div>
+            <div class="row plain-element text-start">
+              <table class="table-overview">
+                {% for key, value in element.items %}
+                {% if key != "name" %}
+                <tr>
+                  <td class="td-category">{{ key }}</td>
+                  <td>{{ value | truncatechars:100 }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+              </table>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
