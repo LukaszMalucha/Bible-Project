@@ -1,6 +1,8 @@
-venv/
-venv2/
-.idea/
+*.pyc
+.~c9
+__pycache__?
 env.py
-env_linkedin.py
-core/migrations/*
+.idea/*
+venv/*
+*.env
+*.jpg
