@@ -164,6 +164,9 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
     "http://127.0.0.1:9000",
     "http://localhost:63342",
+    "https://www.gnnai.com/",
+    "https://lukaszmalucha.github.io",
+
 ]
 
 REST_FRAMEWORK = {
