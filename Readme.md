@@ -2,7 +2,7 @@
 
 
 
-#### [Visit App](https://www.biblekeywords.com/)
+#### [Visit App](https://www.gnnai.com/)
 
 
 An advanced search engine enables efficient processing of Bible queries.
